@@ -104,3 +104,12 @@ function populateRoutes() {
     dropdown.appendChild(opt);
   });
 }
+console.log("APP LOADED");
+
+fetch('data/TGSRTC_gtfs.zip')
+  .then(res => {
+    console.log("Fetch status:", res.status);
+    return res.arrayBuffer();
+  })
+  .then(() => console.log("ZIP LOADED"))
+  .catch(err => console.error(err));
